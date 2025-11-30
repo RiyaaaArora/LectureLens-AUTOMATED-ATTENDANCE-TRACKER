@@ -3,4 +3,6 @@ build-essential
 libgl1
 libglib2.0-0
 pkg-config
-libboost-all-dev
+libopenblas-dev
+liblapack-dev
+python3-dev
