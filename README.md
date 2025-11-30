@@ -1,6 +1,6 @@
 Lecture Lens: Advanced Attendance System 🚀
 Overview
-Lecture Lens is an innovative, AI-powered attendance tracking system developed for DAV University, Jalandhar, using Streamlit. It leverages face recognition and emotion detection to automate attendance marking during lectures, ensuring accuracy and efficiency. The system includes features for student registration, real-time attendance, timetable management, and an admin panel for data oversight.
+Lecture Lens is an innovative, AI-powered attendance tracking system developed using Streamlit. It leverages face recognition and emotion detection to automate attendance marking during lectures, ensuring accuracy and efficiency. The system includes features for student registration, real-time attendance, timetable management, and an admin panel for data oversight.
 
 Key Features ✨
 Face Recognition: Uses OpenCV and face-recognition library for accurate student identification.
