@@ -124,7 +124,7 @@ def recognize_face():
                         if not encodeListKnown:
                             st.error("⚠️ No registered faces found! Please go to 'Add New Face' and register a student first.")
                             return
-                        
+                       
                         detected_emotions = []
                         if len(encodesCurFrame) > 0:
                             for encodeFace, faceLoc in zip(encodesCurFrame, facesCurFrame):

@@ -1,7 +1,7 @@
 streamlit
 opencv-python-headless
-numpy
+face_recognition 
+tensorflow
+keras
 pandas
-face-recognition
-dlib
-cmake
+numpy
