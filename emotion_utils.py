@@ -4,9 +4,20 @@ from keras.models import load_model
 import streamlit as st
 
 # --- Load Emotion Detection Model ---
-@st.cache_resource
-def load_emotion_model():
-    return load_model('CNN_Model_acc_75.h5')
+# @st.cache_resource
+# def load_emotion_model():
+#     return load_model('CNN_Model_acc_75.h5')
+face_roi = face_roi / float(img_shape)
+        
+        # --- NEW SAFE CODE ---
+        if emotion_model is not None:
+            predictions = emotion_model.predict(face_roi)
+            emotion = emotion_labels[np.argmax(predictions[0])]
+        else:
+            emotion = "Neutral"  # Fake emotion for testing
+        # ---------------------
+        
+        emotions_detected.append(emotion)
 
 emotion_model = load_emotion_model()
 img_shape = 48
@@ -17,7 +28,18 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 def process_frame(frame):
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray_frame, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
-
+    face_roi = face_roi / float(img_shape)
+        
+        # --- NEW SAFE CODE ---
+        if emotion_model is not None:
+            predictions = emotion_model.predict(face_roi)
+            emotion = emotion_labels[np.argmax(predictions[0])]
+        else:
+            emotion = "Neutral"  # Fake emotion for testing
+        # ---------------------
+        
+        emotions_detected.append(emotion)
+        
     emotions_detected = []
 
     for (x, y, w, h) in faces:
