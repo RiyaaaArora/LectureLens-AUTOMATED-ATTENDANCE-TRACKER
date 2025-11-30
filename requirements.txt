@@ -3,7 +3,5 @@ opencv-python-headless
 numpy
 pandas
 face-recognition
-cmake
 dlib
-h5py
-tensorflow-cpu
+cmake
